@@ -1,0 +1,20 @@
+{% extends 'menu.html.twig' %}
+
+{% block title %}Edycja użytkownika{% endblock %}
+
+{% block body %}
+
+<div>
+    <h1>Edycja użytkownika</h1>
+    <a class="btn btn-primary" href="{{ path('users') }}">Powrót</a><br />
+    
+    <br />
+
+    <div class="edit_user">
+
+        {{ form(user_form) }}
+
+    </div>
+    
+</div>
+{% endblock %}

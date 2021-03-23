@@ -1,0 +1,25 @@
+body {
+    position: absolute;
+    top: 0;
+    margin: 10px;
+    width: 100%;
+    padding-right: 20px;
+    background-color: #e0e0e0;
+}
+
+table {
+    background-color: white;
+}
+
+thead {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn {
+    margin: 2px;
+}
+
+.edit_user {
+    max-width: 500px;
+}

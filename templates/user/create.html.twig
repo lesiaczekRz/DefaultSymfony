@@ -1,0 +1,20 @@
+{% extends 'menu.html.twig' %}
+
+{% block title %}Nowy użytkownik{% endblock %}
+
+{% block body %}
+
+<div>
+    <h1>Nowy użytkownik</h1>
+    <a class="btn btn-primary" href="{{ path('users') }}">Powrót</a><br />
+    
+    <br />
+
+    <div class="edit_user">
+
+        {{ form(user_form) }}
+
+    </div>
+    
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		{% block stylesheets %}
+			{# 'app' must match the first argument to addEntry() in webpack.config.js #}
+			{{ encore_entry_link_tags('app') }}
+
+			<!-- Renders a link tag (if your module requires any CSS)
+			                 <link rel="stylesheet" href="/build/app.css"> -->
+		{% endblock %}
+	</head>
+	<body>
+		{% for label, messages in app.flashes %}
+			{% for message in messages %}
+				<div class="alert alert-{{ label }}">
+					{{ message }}
+				</div>
+			{% endfor %}
+		{% endfor %}
+		{% block body %}{% endblock %}
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+	</body>
+</html>

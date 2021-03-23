@@ -1,0 +1,36 @@
+{% extends 'menu.html.twig' %}
+
+{% block title %}Informacje o użytkowniku{% endblock %}
+
+{% block body %}
+
+<div>
+    <h1>Informacje o użytkowniku</h1>
+    <a class="btn btn-primary" href="{{ path('users') }}">Powrót</a>
+    
+    <br /><br />
+
+    <div class="edit_user">
+    
+        <table class="table table-bordered">
+            <tr>
+                <th>Login</th><td>{{ user.username }}</td>
+            </tr>
+            <tr>
+                <th>Rola</th><td>{{ role }}</td>
+            </tr>
+            <tr>
+                <th>Imie</th><td>{{ user.firstName }}</td>
+            </tr>
+            <tr>
+                <th>Nazwisko</th><td>{{ user.lastName }}</td>
+            </tr>
+            <tr>
+                <th>Utworzono</th><td>{{ user.createdAt|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </table>
+
+    </div>
+    
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'menu.html.twig' %}
+
+{% block title %}Użytkownicy{% endblock %}
+
+{% block body %}
+
+<div>
+    <h1>Użytkownicy</h1>
+    <a class="btn btn-primary" href="{{ path('create_user') }}">Nowy użytkownik</a>
+    <a class="btn btn-primary" href="/logout">Wyloguj</a>
+    
+    <br />
+    <br />
+
+    {% if users|length > 0 %}
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">L.p.</th>
+                    <th scope="col">Login</th>
+                    <th scope="col">Imie</th>
+                    <th scope="col">Nazwisko</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% set lp = 0 %}
+            {% for user in users %}
+                {% set lp = lp + 1 %}
+                <tr>
+                    <th scope="row">{{ lp }}</th>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.firstName }}</td>
+                    <td>{{ user.lastName }}</td>
+                    <td>
+                        <a class="btn btn-primary" href="{{ path('show_user', { id: user.id }) }}">Pokaż</a>
+                        <a class="btn btn-primary" href="{{ path('edit_user', { id: user.id }) }}">Edytuj</a>
+                        <a class="btn btn-primary" href="{{ path('pass_user', { id: user.id }) }}">Zmień hasło</a>
+                        <a class="btn btn-primary" href="{{ path('delete_user', { id: user.id }) }}" onClick="return confirm('Usunąć rekord?')">Usuń</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <h4>Brak danych</h4>
+    {% endif %}
+</div>
+{% endblock %}
