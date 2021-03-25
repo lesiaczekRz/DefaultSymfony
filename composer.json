@@ -4,7 +4,6 @@
     "type": "project",
     "license": "proprietary",
     "require": {
-        "lesiaczek_rz/default_auth": "dev-bugfix",
         "php": "^7.2.5",
         "ext-ctype": "*",
         "ext-iconv": "*",
@@ -100,11 +99,5 @@
         "symfony/var-dumper": "^5.2",
         "symfony/web-profiler-bundle": "^5.2"
     },
-    "minimum-stability": "dev",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/lesiaczekRz/DefaultSymfony"
-        }
-    ]
+    "minimum-stability": "dev"
 }
