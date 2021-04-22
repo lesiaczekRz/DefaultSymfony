@@ -40,18 +40,13 @@ security:
 
             # https://symfony.com/doc/current/security/impersonating_user.html
             # switch_user: true
-            form_login_ldap:
-                login_path: app_login
-                check_path: app_login
-                username_parameter: username
-                password_parameter: password
-                # service: Symfony\Component\Ldap\Ldap
-                service: App\Security\Ldap
-                dn_string: 'dc=net,dc=pp'
-                # provider: my_ldap
-                search_dn: 'user'
-                query_string: '(cn={username})'
-                search_password: 'password'
+            
+            form_login:
+               login_path: app_login
+               check_path: app_login
+               username_parameter: username
+               password_parameter: password
+
             json_login:
                 check_path: /authentication_token
                 username_path: username
